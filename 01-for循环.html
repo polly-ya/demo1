@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在body里面打印五个hello world
+        // for(let i=0;i<5;i++){
+        //     document.write(`hello world<br/>`)
+        // }
+        // 计算1-100的和
+        // let sum = 0
+        // for(let i=1;i<=100;i++){
+        //     sum+=i
+        // }
+        // console.log(sum);
+
+        /* 语法：
+        for(初始化变量；条件表达式；操作表达式){
+            循环体
+        } */
+
+        /* 
+        1、初始化操作在整个for循环里面只执行一次
+        2、执行条件表达式，如果结果为true则执行循环体语句，否则退出循环
+        3、每次执行完循环体以后，执行操作表达式，然后再执行条件表达式，判断是否符合条件，
+        4、直至条件表达式结果为false，结束整个for循环
+         */
+
+        //无使用环境  死循环
+        // for (;;) {
+        //     document.write('键盘敲烂，月薪过两万！<br>')
+        // }
+
+        // for
+        // 遍历数组
+        // const color = ['red','green','blue']
+        // for(let i=0;i<color.length;i++){
+        //     document.write(`${color[i]}<br/>`)
+        // }
+        // 遍历字符串
+        // const str = 'hello world'
+        // for(let i=0;i<str.length;i++){
+        //     document.write(`${str[i]}<br/>`)
+        // }
+
+        // for-in
+        // 遍历对象
+        // let obj = {
+        //     name: 'tom',
+        //     age: 18,
+        //     hobby: 'study'
+        // }
+        // for(property in obj){
+        //     console.log(property); //属性名
+        //     console.log(obj[property]); // 属性值
+        // }
+        // 遍历数组
+        // const color = ['red', 'green', 'blue']
+        // for (i in color){
+        //     console.log(i);//index索引
+        //     console.log(color[i]); //值
+        // }
+        // 遍历字符串
+        // const str = 'hello world'
+        // for (i in str){
+        //     console.log(i);//index索引
+        //     console.log(str[i]); //值
+        // }
+
+        // for-of
+        // 遍历数组
+        // const color = ['red', 'green', 'blue']
+        // for (item of color){
+        //     console.log(item); // 值
+        // }
+        // 遍历字符串
+        // const str = 'hello world'
+        // for (i of str){
+        //     console.log(i);// 值
+        // }
+
+        // continue和break
+        // 1.continue：退出本次循环（当前的循环），继续执行剩余次数的循环
+        // for (let i = 0; i < 5; i++) {
+        //     if (i === 3) {
+        //         continue
+        //     }
+        //     document.write(`hello world${i}<br/>`)
+        // }
+        // 2.break：退出整个for循环
+        // for (let i = 0; i < 5; i++) {
+        //     if (i === 3) {
+        //         break
+        //     }
+        //     document.write(`hello world${i}<br/>`)
+        // }
+
+        // 双重for循环 
+        // 里层for循环就是外层for循环的一条语句
+        // 外层for循环执行1次 里层执行全部
+        // 1. 双重for循环 语法结构
+        // for (外层的初始化变量; 外层的条件表达式; 外层的操作表达式) {
+        //     for (里层的初始化变量; 里层的条件表达式; 里层的操作表达式) {
+        //         // 执行语句;
+        //     }
+        // }
+        // 4. 代码验证 里层总共执行15次 外层3次
+        // for (var i = 1; i <= 5; i++) {
+        //   console.log('这是外层for循环第' + i + '次')
+        //   for (var j = 1; j <= 3; j++) {
+        //     console.log('这是里层for循环的第' + j + '次')
+        //   }
+        //   console.log('这是外层for循环每次最后执行的语句')
+        // }
+
+        // 打印五行三列的*
+        // for (let i = 0; i < 5; i++) {
+        //     for (let j = 0; j < 3; j++) {
+        //         document.write('*')
+        //     }
+        //     document.write(`<br>`)
+        // }
+
+        //5、打印倒三角星星
+        // let n = prompt('请输入一个整数:')
+        // for (let i = 1; i <= n; i++) {
+        //     for (let j = n; j >= i; j--) {
+        //         document.write('★')
+        //     }
+        //     document.write('<br>')
+        // }
+        // for (let i = 1; i <= 5; i++) {
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write('<span>♥</span>')
+        //     }
+        //     document.write('<br>')
+        // }
+
+        // while循环
+        // 1. 变量的起始值
+        // let i = 1
+        //     // 2. 终止条件
+        // while (i <= 3) {
+        //     document.write('我要循环三次 <br>')
+        //         // 3. 变量的变化量(一定不要忘记加自增  不然会死循环)
+        //     i++
+        // }
+        // 计算1-100的和
+        // let sum = 0
+        // let i = 0
+        // while (i <= 100) {
+        //     sum += i
+        //     i++
+        // }
+        // console.log(sum);
+
+        // do...while...
+        // 在判断条件之前会先执行一次，do...while...的循环体至少执行一次
+        // let i = 1
+        // let sum = 0
+        // do {
+        //     // console.log(i);
+        //     sum += i
+        //     i++
+        //     if (i === 5) {
+        //         break
+        //     }
+        // } while (i <= 10)
+        // console.log(sum);
+
+
+        // let sum = 0
+        // let arr = [11, 22, 33]
+        // for (let i = 0; i <= arr.length; i++) {
+        //     sum += arr[i]
+        // }
+        // console.log(sum) //NaN
+
+        // let i;
+        // for (i = 0; i < 5; i++) {
+        //     console.log(i)
+        // }
+        // console.log(i)
+    </script>
+</body>
+
+</html>

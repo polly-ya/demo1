@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-etakeMoneyiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 开始循环 输入框写到 循环里面
+        let money = 100
+        while (1) {
+            let num = +prompt(`
+          请输入您要的操作
+          1、存钱
+          2、取钱
+          3、显示余额
+          4、退出
+      `)
+                if (num == 4) {
+                    break
+                }
+                switch (num) {
+                    case 1:
+                        let saveMoney = +prompt('请输入您的存款金额：')
+                        money += saveMoney
+                        alert(`您当前的金额为：${money}`)
+                        break
+                    case 2:
+                        let takeMoney = +prompt('请输入您的存款金额：')
+                        money -= takeMoney
+                        alert(`您当前的金额为：${money}`)
+                        break
+                    case 3:
+                        alert(`您当前的金额为：${money}`)
+                        break
+                    default:
+                        alert('请输入正确的序号')
+                }
+
+            ////////////////////////////////////////////////////
+            // if (num == 4) {
+            //     break
+            // }
+            // if (num == 1) {
+            //     let saveMoney = +prompt('请输入存款金额：')
+            //     money += saveMoney
+            //     alert(`您当前的金额为：${money}`)
+            // } else if (num == 2) {
+            //     let takeMoney = +prompt('请输入取款金额：')
+            //     if (takeMoney > money) {   
+            //         alert('余额不足！')
+            //     } else {
+            //         money -= takeMoney
+            //         alert(`您当前的金额为：${money}`)
+            //     }
+            // } else if (num == 3) {
+            //     alert(`您当前的金额为：${money}`)
+            // } else {
+            //     alert('请输入正确的序号')
+            // }
+        }
+    </script>
+</body>
+
+</html>
