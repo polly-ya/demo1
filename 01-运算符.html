@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、算术运算符：+ - * / %（某个数是否能被整除）
+        // for (let i = 0; i < 10; i++) {
+        //     if (i % 2 == 0) {
+        //         console.log(i);
+        //     }
+        // }
+        // 优先级 ：() * / % + -  优先级越高越先被执行，优先级相同时从左向右执行
+        // 先乘除后加减，有括号先算括号里面的
+        // const a = 1 + 12 * 2 - 10 / 5 % 2
+        // console.log(a); // 25
+
+        // 2、赋值运算符=：将等号右边的值赋予给左边, 要求左边必须是一个容器  
+        // 其他：+= -= *= /= %=
+        // let num = 1;
+        // num = num + 1;  
+        // num += 1 // 2
+        // num *= 2 // 2
+        // num /= 2 // 0.5
+        // num %= 2 // 1
+        // console.log(num);  // 2
+
+
+        // 3、一元，二元，三元运算符
+
+        // 二元
+        // const num = 12 + 24
+
+        // 一元  ++自增(变量值+1)  --自减  经常用于计数来使用，比如进行10次操作，用它来计算进行了多少次了
+
+        // 前置递增和后置递增，单独使用时没有区别
+        // let num = 3
+        // num += 1
+        // num++
+        // ++num
+        // num--
+        // --num
+        // console.log(num);
+
+        // 前置递增和后置递增参与运算的时候有区别,一般开发中我们都是独立使用(且后置递增用的比较多)
+        // let i = 1
+        // console.log(i++ + 2); // 3 后置递增：先使用再自增
+        // console.log(++i + 2); // 4  前置递增：先自增再使用
+
+        // let b = 10
+        // console.log(b-- - 1 ) // 9
+        // console.log(--b - 1) // 8
+
+        // let i = 1;
+        // console.log(i++ + ++i + i) // 7
+
+
+        // 4、比较运算符 >  <  >=  <=  == ===  != !==  返回结果boolean：true和false 
+        // == 是判断，只要值相等就可以了，不要求数据类型一致
+        // === 是全等，要求值和数据类型都要一直  开发中使用 ===
+        // console.log(1 == '1')
+        // console.log(1 === '1')
+        // console.log(true == 1);
+        // console.log(true === 1); //false
+        // console.log(false === 0); // false
+        // console.log(false == undefined); // false
+        // console.log(false == null); // false
+        // console.log(false === undefined); // false
+        // console.log(false === null); // false
+        // console.log(undefined == null); // true
+        // console.log(undefined === null); // false
+        // console.log(NaN == NaN); //false NaN不等于任何值，包括它本身
+        // 浮点数不能直接比较，存在精度问题
+        // console.log(0.3 == 0.1 + 0.2); false
+
+        // -在某种意义上，null就是空的意思，undefined就是未定义，大概就是js的一种规定吧，所以
+        // 它们两者既不是false也不是true
+        // -但是如果用他们两者作为判断条件的话，在判断条件中他们可以当做false来作为if语句的判断
+
+        // console.log(typeof null); //object
+        // console.log(typeof undefined); // undefined
+        // -当不考虑这两者的字符类型的时候，null==undefined是为true的
+        // -但是如果考虑字符类型的时候，null的字符类型是Object，而undefined的字符类型是undefined
+        // -如果你用typeof undefined==typeof null，那么返回结果则为false
+        // -总结就是当不考虑字符类型时发现undefined等于null 当考虑字符类型时undefined不等于空
+
+        // 5、逻辑运算符 && || !
+        // 短路运算 转为false的有：null 0 undefined NaN ''
+        // console.log(1 && 2); // 2
+        // console.log(null && 2); // null
+        // console.log(1 || 2); // 1
+        // console.log(undefined || 2); // 2
+        // console.log(!1); // false
+        // console.log(!false); // true
+        // console.log(!undefined); // true
+
+        // 判断  如果我想判断一个变量 num 是否大于5且小于10
+        // num > 5 && num < 10
+
+        // 练习：判断一个数是4的倍数，且不是100的倍数
+        // 需求：用户输入一个，判断这个数能被4整除，但是不能被100整除,满足条件，页面弹出true，否则弹出 false
+        // num % 4 === 0 && num % 100 !== 0
+
+        // 练习：
+        // let a = 3 > 5 && 2 < 7 && 3 == 4
+        // console.log(a);  //f t f = f 
+
+        // let b = 3 <= 4 || 3 > 1 || 3 != 2
+        // console.log(b); // t t t = t
+
+        // let c = 2 === "2"
+        // console.log(c);  //f
+
+        // let d = !c || b && a
+        // console.log(d); //t || t && f = t
+
+
+        // 6、表达式和语句
+        // 表达式是可以被求值的代码 x = 7;   3 + 4;   num++;
+        // 语句是一段可以执行的代码 语句不一定有值 alert prompt if for switch
+
+        // 程序的三大流程控制语句 顺序结构，分支结构，循环结构
+        // 分支语句：if分支语句，三元运算符，swicth语句
+        // if分支语句：单分支，双分支，多分支
+
+        // - 括号内的条件为true时，进入大括号里执行代码
+        // - 小括号内的结果若不是布尔类型时，会发生隐式转换转为布尔类型
+        // - 如果大括号只有一个语句，大括号可以省略，但是，俺们不提倡这么做
+        // if(true){
+        //     console.log(true);
+        // }
+        // if(true) console.log(true);  不提倡
+
+
+        // if(true){
+        // 满足条件
+        //     console.log(true);
+        // }else{
+        // 不满足条件执行
+        //     console.log(false);
+        // }
+
+        // 从上往下依次判断，若满足条件则执行满足的，其他不执行，都不满足则执行else里面的，
+        // let num = 10
+        // if (num < 0) {
+        //     console.log('小于0');
+        // } else if (num > 10 && num < 100) {
+        //     console.log('num大于10小于100');
+        // } else if (num > 100 && num < 200) {
+        //     console.log('num大于100小于200');
+        // } else {
+        //     console.log('num大于200');
+        // }
+
+        // 三元运算符 比if双分支语句更简单的写法 ? 与 : 配合使用
+        // 条件 ? 满足条件执行的代码 ：不满足条件执行的代码 
+        // let a = 10
+        // let b = 20
+        // if(a>b){
+        //     console.log(a);
+        // }else{
+        //     console.log(b);
+        // }
+        // a > b ? console.log(a) : console.log(b);;
+
+        // switch语句 全等  用于等值判断，不适合于区间判断
+        // let num = 10
+        // switch (num) {
+        //     case 1:
+        //         console.log('我是小1啦')
+        //         break
+        //     case 2:
+        //         console.log('我是小2啦')
+        //         // case穿透
+        //         // 忘记添加 break，那么代码将会从值所匹配的 case 语句开始运行，
+        //         // 然后持续执行下一个 case 语句而不论值是否匹配，直到遇到break
+        //         break
+        //     case 3:
+        //         console.log('我是小3啦')
+        //         break
+        //     case 4:
+        //         console.log('我是小4啦')
+        //         break;
+        //     case 5:
+        //         console.log('这是5啦');
+        //     // default 语句可以放在前面，找不到是回找到default
+        //     default: console.log('我不是数字哦')
+        //         break
+        // }
+
+        // console.log(null || undefined);
+        // console.log(1 && undefined);
+
+        // let number = 1234
+        // console.log(number % 10);
+        // console.log(parseInt(number / 10 % 10));
+        // console.log(parseInt(number / 100 % 10));
+        // console.log(parseInt(number / 1000));
+
+        // console.log(Number('ll'));
+        let a = 32
+        let b = 20
+        let c = 30
+        let temp;
+        if (a > b) {
+            temp = a
+            a = b
+            b = temp
+        }
+        if (a > c) {
+            temp = a
+            a = c
+            c = temp
+        }
+        if (b > c) {
+            temp = b
+            b = c
+            c = temp
+        }
+        console.log(a,b,c);
+
+    </script>
+</body>
+
+</html>
